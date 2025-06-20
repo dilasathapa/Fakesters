@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const connectDb = require('./db/database');
 const bodyParser = require('body-parser');
-const router = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
+const chatRoutes = require('./routes/chatRoutes');
 const dotenv = require('dotenv');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -14,7 +15,9 @@ app.use(express.json())
 app.use(cors());
 connectDb()
 
-app.use('/api/user', router )
+app.use('/api/user', userRoutes )
+app.use('/api/chat', chatRoutes)
+
 
 app.use(notFound);
 app.use(errorHandler)
