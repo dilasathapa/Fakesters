@@ -2,6 +2,7 @@ import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, V
 import React, { useState } from 'react'
 // import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
@@ -10,6 +11,8 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
     const [show, setShow] = useState(false); 
     const toast = useToast();
+
+    const navigate = useNavigate()
     
     
     const handleClick =()=>{
@@ -45,7 +48,7 @@ const Login = () => {
             })
             localStorage.setItem("userInfo", JSON.stringify(data));
             setLoading(false);
-            history.pushState("/chats")
+            navigate("/chats")
         } catch (error) {
             toast({
             title: "Error Occured!",
