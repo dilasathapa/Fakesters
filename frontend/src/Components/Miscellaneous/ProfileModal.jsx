@@ -1,4 +1,4 @@
-import { Button, IconButton, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react'
+import { Button, IconButton, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react'
 import {ViewIcon} from "@chakra-ui/icons"
 import React from 'react'
 
@@ -14,7 +14,7 @@ const ProfileModal = ({user, children}) => {
       ) : (
         <IconButton display={{base : "flex"}} icon={<ViewIcon />} onClick={onOpen}/>
       )}
-      <Modal size="lg" onClose={onclose} isOpen={isOpen} isCentered>
+      <Modal size="lg" onClose={onClose} isOpen={isOpen} isCentered>
           <ModalOverlay />
           <ModalContent h="410px">
             <ModalHeader
@@ -38,7 +38,7 @@ const ProfileModal = ({user, children}) => {
                 src={user.pic}
                 alt={user.name}
               />
-              <Text 
+              <Text
                 fontSize={{base : "28px", md: "30px"}}
               >
                 Email : {user.email}

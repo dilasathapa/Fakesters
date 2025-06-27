@@ -5,6 +5,7 @@ import { AddIcon } from "@chakra-ui/icons";
 import axios from 'axios';
 import ChatLoading from './ChatLoading';
 import GroupChatModal from "./Miscellaneous/GroupChatModal"
+import { getSender } from './config/Chatlogics';
 
 const Mychats = ({fetchAgain}) => {
 
@@ -20,7 +21,7 @@ const Mychats = ({fetchAgain}) => {
                     Authorization : `Bearer ${user.token}`
                 }
             }
-            const {data} = await axios.get('http://localhost/api/chat', config)
+            const {data} = await axios.get('http://localhost:8000/api/chat', config)
             setChats(data);
 
         } catch (error) {
@@ -65,7 +66,7 @@ const Mychats = ({fetchAgain}) => {
             >
                 My Chats 
                 
-                <GroupChatModal> group chats 
+                <GroupChatModal> 
                     <Button
                         display="flex"
                         fontSize={{ base: "17px", md: "10px", lg: "17px" }}
