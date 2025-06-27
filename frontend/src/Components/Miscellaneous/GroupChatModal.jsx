@@ -30,6 +30,8 @@ const GroupChatModal = ({children}) => {
         setSelectedUsers([...selectedUsers, userToAdd])
     }
 
+    console.log("hello selected users", selectedUsers)
+
     const handleSearch = async(query)=>{
         setSearch(query);
         if(!query){
@@ -46,6 +48,7 @@ const GroupChatModal = ({children}) => {
 
             const {data} = await axios.get(`http://localhost:8000/api/user?search=${search}`, config)
             setLoading(false);
+            console.log("data", data)
             setSearchResult(data);
         } catch (error) {
             toast({
@@ -81,12 +84,13 @@ const GroupChatModal = ({children}) => {
                     Authorization : `Bearer ${user.token}`
                 }
             }
-            const {data} = await axios.post(`http://localhost:8000/api/chat/group`, {
+            const data = await axios.post(`http://localhost:8000/api/chat/group`, {
                 name : groupChatName,
-                users : JSON.stringify(selectedUsers.map((u) => u._id))
+                users : JSON.stringify(selectedUsers.map((u) =>  u._id)),
             }, config);
 
             setChats([data, ...chats]);
+            console.log(data)
             onClose();
             toast({
                 title: "New Group Chat Created!",
@@ -98,7 +102,8 @@ const GroupChatModal = ({children}) => {
         } catch (error) {
             toast({
                 title: "Failed to Create the Chat!",
-                description: error.response.data,
+                // description: error.response.data,
+                description : error,
                 status: "error",
                 duration: 5000,
                 isClosable: true,
@@ -152,11 +157,12 @@ const GroupChatModal = ({children}) => {
                         { loading ? (
                             <div>Loading...</div>
                         ) : (
-                            searchResult?.slice(0, 4).map((user)=>(
+
+                            searchResult?.slice(0, 4).map((per)=>(
                                 <UserListItem 
-                                    key={user._id}
-                                    user={user}
-                                    handleFunction={()=>handleGroup(user)}
+                                    key={per._id}
+                                    user={per}
+                                    handleFunction={()=>handleGroup(per)}
                                 />
                             ))
                         )}
