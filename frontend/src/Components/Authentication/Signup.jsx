@@ -150,11 +150,6 @@ const Signup = () => {
                 placeholder='confirm your password'
                 onChange={(e)=>{setConfirmedPassword(e.target.value)}}
             />  
-            {/* <InputRightElement width="4.5rem">
-                <Button h="1.75rem" size="sm" onClick={handleClick}>
-                    {show ? "Hide" : "Show"}
-                </Button>
-            </InputRightElement>   */}
             </InputGroup>       
         </FormControl>
         <FormControl id='pic'> 
