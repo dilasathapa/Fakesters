@@ -1,0 +1,17 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+
+.logo_pic{
+  /* height: 60px; */
+  margin-top: 2%;
+  width: 30%;
+}
+
+.chatlogo{
+  height: 50px;
+}

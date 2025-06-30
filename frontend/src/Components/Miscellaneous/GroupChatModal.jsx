@@ -30,7 +30,6 @@ const GroupChatModal = ({children}) => {
         setSelectedUsers([...selectedUsers, userToAdd])
     }
 
-    console.log("hello selected users", selectedUsers)
 
     const handleSearch = async(query)=>{
         setSearch(query);
@@ -102,7 +101,6 @@ const GroupChatModal = ({children}) => {
         } catch (error) {
             toast({
                 title: "Failed to Create the Chat!",
-                // description: error.response.data,
                 description : error,
                 status: "error",
                 duration: 5000,

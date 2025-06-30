@@ -1,8 +1,11 @@
 import { Badge, CloseButton } from '@chakra-ui/react'
 import React from 'react'
+import "../Styles.css"
 
 const UserBadgeItem = ({user, handleFunction, admin}) => {
   return (
+
+    
     <Badge
       px={2}
       py={1}
@@ -14,10 +17,14 @@ const UserBadgeItem = ({user, handleFunction, admin}) => {
       colorScheme="purple"
       cursor="pointer"
       onClick={handleFunction}
+      display="flex"
     >
-      {user.name}
+      <p>
+        {user.name}
       {admin === user._id && <span> (Admin)</span>}
-      <CloseButton pl={1} />
+      </p>
+      
+      <CloseButton size="10px" pl={1} fontSize={8} />
     </Badge>
   )
 }

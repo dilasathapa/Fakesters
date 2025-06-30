@@ -144,7 +144,7 @@ const addToGroup = asyncHandler(async(req, res)=>{
 const removeFromGroup = asyncHandler(async(req, res)=>{
     const {chatId, userId} = req.body;
 
-    const removed = await Chat.findByIdAndupdate(chatId, {
+    const removed = await Chat.findByIdAndUpdate(chatId, {
         $pull : { users : userId}
     }, { new : true})
     .populate("users", "-password")
