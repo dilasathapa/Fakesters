@@ -87,7 +87,7 @@ const Signup = () => {
                 "Content-type" : "application/json",
             }
         }
-        const {data} = await axios.post("http://localhost:8000/api/user/register", {
+        const {data} = await axios.post("/api/user/register", {
             name, email, password, pic
         }, config)
         toast({
