@@ -2,7 +2,84 @@
   "hash": "dd062caf",
   "configHash": "319358d0",
   "lockfileHash": "a3c22105",
-  "browserHash": "c7a77056",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "b0e6724f",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "cf7d783c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "d70f656f",
+      "needsInterop": true
+    },
+    "@chakra-ui/react": {
+      "src": "../../node_modules/@chakra-ui/react/dist/esm/index.mjs",
+      "file": "@chakra-ui_react.js",
+      "fileHash": "44fc9e9f",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "c6f6151c",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "0645b60c",
+      "needsInterop": false
+    },
+    "@chakra-ui/icons": {
+      "src": "../../node_modules/@chakra-ui/icons/dist/esm/index.mjs",
+      "file": "@chakra-ui_icons.js",
+      "fileHash": "cdc735a1",
+      "needsInterop": false
+    },
+    "react-notification-badge": {
+      "src": "../../node_modules/react-notification-badge/lib/index.js",
+      "file": "react-notification-badge.js",
+      "fileHash": "7a413afd",
+      "needsInterop": true
+    },
+    "react-lottie": {
+      "src": "../../node_modules/react-lottie/dist/index.js",
+      "file": "react-lottie.js",
+      "fileHash": "815852e5",
+      "needsInterop": true
+    },
+    "socket.io-client": {
+      "src": "../../node_modules/socket.io-client/build/esm/index.js",
+      "file": "socket__io-client.js",
+      "fileHash": "9d245242",
+      "needsInterop": false
+    },
+    "react-scrollable-feed": {
+      "src": "../../node_modules/react-scrollable-feed/dist/index.modern.mjs",
+      "file": "react-scrollable-feed.js",
+      "fileHash": "932bfb52",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-7DYXD7DK": {
+      "file": "chunk-7DYXD7DK.js"
+    },
+    "chunk-E5ODL3YF": {
+      "file": "chunk-E5ODL3YF.js"
+    },
+    "chunk-DQROLGKX": {
+      "file": "chunk-DQROLGKX.js"
+    },
+    "chunk-65KY755N": {
+      "file": "chunk-65KY755N.js"
+    },
+    "chunk-V4OQ3NZ2": {
+      "file": "chunk-V4OQ3NZ2.js"
+    }
+  }
 }
