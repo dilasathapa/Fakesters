@@ -45,7 +45,7 @@ const GroupChatModal = ({children}) => {
                 }
             }
 
-            const {data} = await axios.get(`/api/user?search=${search}`, config)
+            const {data} = await axios.get(`https://fakesters-2.onrender.com/api/user?search=${search}`, config)
             setLoading(false);
             console.log("data", data)
             setSearchResult(data);
@@ -83,7 +83,7 @@ const GroupChatModal = ({children}) => {
                     Authorization : `Bearer ${user.token}`
                 }
             }
-            const data = await axios.post(`/api/chat/group`, {
+            const data = await axios.post(`https://fakesters-2.onrender.com/api/chat/group`, {
                 name : groupChatName,
                 users : JSON.stringify(selectedUsers.map((u) =>  u._id)),
             }, config);
