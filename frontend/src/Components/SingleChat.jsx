@@ -47,7 +47,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/message/${selectedChat._id}`,
+        `https://fakesters-2.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -78,7 +78,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "/api/message",
+          "https://fakesters-2.onrender.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat._id,
@@ -102,7 +102,9 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
   useEffect(() => {
     // socket = io(ENDPOINT);
-    socket = io();
+    socket = io("https://fakesters-2.onrender.com", {
+      transports: ["websocket"],
+    });
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));

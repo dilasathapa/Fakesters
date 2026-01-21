@@ -87,7 +87,7 @@ const Signup = () => {
                 "Content-type" : "application/json",
             }
         }
-        const {data} = await axios.post("/api/user/register", {
+        const {data} = await axios.post("https://fakesters-2.onrender.com/api/user/register", {
             name, email, password, pic
         }, config)
         toast({
