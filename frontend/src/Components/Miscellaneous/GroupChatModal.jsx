@@ -31,6 +31,7 @@ const GroupChatModal = ({children}) => {
     }
 
 
+    
     const handleSearch = async(query)=>{
         setSearch(query);
         if(!query){
