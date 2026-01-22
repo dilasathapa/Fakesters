@@ -8,8 +8,9 @@ import ProfileModal from './ProfileModal';
 import ChatLoading from '../ChatLoading';
 import UserListItem from '../UserAvatar/UserListItem';
 import {getSender} from "../config/Chatlogics" 
-import { Effect } from "react-notification-badge";
-import NotificationBadge from "react-notification-badge";
+// import { Effect } from "react-notification-badge";
+// import NotificationBadge from "react-notification-badge";
+import { FiBell } from "react-icons/fi";
 import logo from "./../../assets/filelogo.png"
 import "../Styles.css"
 
@@ -121,10 +122,19 @@ const Sidedrawer = () => {
                 <div>
                     <Menu>
                         <MenuButton p={1}>
-                            <NotificationBadge 
+                            {/* <NotificationBadge 
                              count = {notification.length}
                              effect = {Effect.SCALE}
-                            />
+                            /> */}
+                            <div className="notification-wrapper">
+                                <FiBell size={22} />
+
+                                {notification.length > 0 && (
+                                    <span className="notification-badge">
+                                    {notification.length}
+                                    </span>
+                                )}
+                            </div>
                             <BellIcon fontSize="2xl" m={1}/>
                         </MenuButton>
                         <MenuList pl={2}>
